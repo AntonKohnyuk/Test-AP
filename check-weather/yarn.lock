@@ -1692,6 +1692,14 @@
   dependencies:
     call-bind "^1.0.7"
 
+"@ngrx/effects@^17.1.1":
+  version "17.1.1"
+  resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-17.1.1.tgz#308942c131eae21da529c112476b0b212313c1a3"
+  integrity sha512-VDNVI70wfEwqoNliffAiMhsPry0CWKkifCLmfzr+SZEEdAaPEBr4FtRrrdcdq/ovmkcgoWukkH2MBljbCyHwtA==
+  dependencies:
+    "@ngrx/operators" "17.0.0-beta.0"
+    tslib "^2.0.0"
+
 "@ngrx/eslint-plugin@^17.1.1":
   version "17.1.1"
   resolved "https://registry.yarnpkg.com/@ngrx/eslint-plugin/-/eslint-plugin-17.1.1.tgz#3ae4295fe3813f401ca8214916c5ae679d7ca58c"
@@ -1701,6 +1709,20 @@
     eslint-etc "^5.1.0"
     semver "^7.3.5"
     strip-json-comments "3.1.1"
+
+"@ngrx/operators@17.0.0-beta.0":
+  version "17.0.0-beta.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/operators/-/operators-17.0.0-beta.0.tgz#030486f3a610fa919d2b155aad3bc7b4c708550d"
+  integrity sha512-EbO8AONuQ6zo2v/mPyBOi4y0CTAp1x4Z+bx7ZF+Pd8BL5ma53BTCL1TmzaeK5zPUe0yApudLk9/ZbHXPnVox5A==
+  dependencies:
+    tslib "^2.3.0"
+
+"@ngrx/store-devtools@^17.1.1":
+  version "17.1.1"
+  resolved "https://registry.yarnpkg.com/@ngrx/store-devtools/-/store-devtools-17.1.1.tgz#dcbb221da64282f79df696edfe1518e8b6659291"
+  integrity sha512-MCzM44wHzc0eY6FSvPQwuXn1HFst8Y4Ckq7jvlPA202nJYwMZQQJReI5KQNHfGiqe0RpZKov0FUmy6sIyOOt2A==
+  dependencies:
+    tslib "^2.0.0"
 
 "@ngrx/store@^17.1.1":
   version "17.1.1"
