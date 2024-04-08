@@ -1,22 +1,15 @@
-<article class="container">
-  <div class="header">
-    12.20 PM <br />
-    Monday, 1 April 2024
-  </div>
-  <div class="search">
-    <input type="text" placeholder="city" />
-    <button>Search</button>
-  </div>
-  <section>
-    <app-google-calendar></app-google-calendar>
-  </section>
+<div class="header">
+  12.20 PM <br />
+  Monday, 1 April 2024
+</div>
+<div class="search">
+  <input type="text" placeholder="city" />
+  <button>Search</button>
+</div>
+<section>
+  <app-google-calendar></app-google-calendar>
+</section>
 
-  <section class="forecast">
-    @for (el of forecastElemnts; track $index) {
-      <app-forecast-card
-        [day]="el.day"
-        [icon]="el.icon"
-        [temp]="el.temp"></app-forecast-card>
-    }
-  </section>
-</article>
+<section class="forecast">
+  <router-outlet></router-outlet>
+</section>

@@ -10,4 +10,18 @@ main {
   align-items: center;
   justify-content: center;
   padding: 10px 20px;
+  .container {
+    background-color: rgba(217, 217, 217, 0.6);
+    border-radius: 20px;
+    padding: 12px 1rem;
+    width: 100%;
+    min-width: 280px;
+    max-width: 1147px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 50px 79px;
+  }
 }
