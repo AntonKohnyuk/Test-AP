@@ -21,3 +21,9 @@ export const selectDailyError = createSelector(
   selectDailyFeature,
   forecast => forecast.error
 );
+
+export const selectDailyTheme = createSelector(
+  selectDailyFeature,
+  forecast => forecast.data?.data[0].weather.icon
+);
+

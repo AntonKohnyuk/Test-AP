@@ -1,0 +1,12 @@
+<main
+  class="background"
+  [ngStyle]="{
+    'background-image':
+      (theme$ | async)
+        ? 'url(' + (theme$ | async) + ')'
+        : 'url(' + defaultTheme + ')'
+  }">
+  <article class="container">
+    <router-outlet></router-outlet>
+  </article>
+</main>
