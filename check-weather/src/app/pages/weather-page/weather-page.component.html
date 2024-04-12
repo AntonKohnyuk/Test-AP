@@ -1,15 +1,18 @@
 <div class="header">
-  12.20 PM <br />
-  Monday, 1 April 2024
+  <app-title></app-title>
+  <app-search></app-search>
 </div>
-<div class="search">
-  <input type="text" placeholder="city" />
-  <button>Search</button>
-</div>
-<section>
-  <app-google-calendar></app-google-calendar>
+
+<section class="additional">
+  <div class="additional__calendar">
+    <app-google-calendar></app-google-calendar>
+  </div>
+  <div class="additional__select">
+    <app-common-button text="Daily"></app-common-button>
+    <app-common-button text="Hourly"></app-common-button>
+  </div>
 </section>
 
 <section class="forecast">
-  <router-outlet></router-outlet>
+  <app-daily-forecast></app-daily-forecast>
 </section>

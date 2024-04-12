@@ -1,4 +1,5 @@
 export interface DailyForecastData {
+  ts: number;
   valid_date: string;
   temp: number;
   weather: {

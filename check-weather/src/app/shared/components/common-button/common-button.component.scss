@@ -1,0 +1,24 @@
+.common {
+  color: white;
+  background-color: black;
+  border: 0;
+  border-radius: 10px;
+  width: 94px;
+  height: 38px;
+  font-size: 20px;
+  font-family: inherit;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    transition: all 0.2s;
+
+    background-color: rgb(34, 34, 34);
+    box-shadow: 4px 4px 14px rgb(187, 187, 187);
+  }
+
+  &:active {
+    background-color: #808080;
+  }
+}

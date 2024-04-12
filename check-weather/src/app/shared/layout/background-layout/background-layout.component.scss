@@ -1,8 +1,7 @@
-main {
+.background {
   width: 100%;
   min-height: 100%;
   display: flex;
-  background-image: url('https://wallpapers.com/images/hd/sunny-background-fjtx5v635w5hu6tg.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -10,10 +9,10 @@ main {
   align-items: center;
   justify-content: center;
   padding: 10px 20px;
+
   .container {
-    background-color: rgba(217, 217, 217, 0.6);
-    border-radius: 20px;
-    padding: 12px 1rem;
+    background-color: rgba(217, 217, 217, 0.2);
+    backdrop-filter: blur(10px);
     width: 100%;
     min-width: 280px;
     max-width: 1147px;
@@ -21,7 +20,9 @@ main {
 }
 
 @media (min-width: 768px) {
-  .container {
-    padding: 50px 79px;
+  .background {
+    .container {
+      height: 647px;
+    }
   }
 }

@@ -1,1 +1,17 @@
-<p>daily-forecast works!</p>
+@if (isLoading$ | async) {
+} @else {
+  @if (error$ | async) {
+    <p>Something went wrong</p>
+  } @else {
+    <div class="forecast_cards">
+      @for (day of (forecast$ | async)?.data; track $index) {
+        <div class="forecast_cards__card">
+          <p>{{ $index ? (day.ts * 1000 | date: 'cccc') : 'Today' }}</p>
+          <p>{{ day.temp }}&deg;C</p>
+        </div>
+      } @empty {
+        <p class="forecast_cards__no_data">No data found</p>
+      }
+    </div>
+  }
+}
