@@ -18,7 +18,6 @@ import * as dailyForecastEffects from './store/effects/daily-forecast.effects';
 import * as hourlyForecastEffects from './store/effects/hourly-forecast.effects';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
-
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
@@ -28,6 +27,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
     provideEffects(dailyForecastEffects, hourlyForecastEffects),
+    provideAnimationsAsync(),
     provideAnimationsAsync(),
   ],
 };

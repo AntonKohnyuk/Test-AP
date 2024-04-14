@@ -1,12 +1,21 @@
 <div class="search">
-  <input type="text" placeholder="city" class="search__input" />
-
-  <input type="text" class="search__input" [formControl]="search" />
-  <app-common-button text="Search"></app-common-button>
-
-  <ul>
-    <li *ngFor="let city of cities$ | async">
-      {{ city.name }}, country: {{ city.countryName }}
-    </li>
-  </ul>
+  <form>
+    <input
+      type="text"
+      placeholder="City search"
+      [formControl]="search"
+      [matAutocomplete]="auto"
+      class="search__input" />
+    <mat-autocomplete
+      autoActiveFirstOption
+      #auto="matAutocomplete"
+      (optionSelected)="onOptionSelected($event)">
+      @for (option of cities$ | async; track option) {
+        <mat-option [value]="option"
+          >{{ option.name }}, {{ option.countryName }}
+        </mat-option>
+      }
+    </mat-autocomplete>
+  </form>
+  <app-common-button text="Search" (click)="searchCity()"></app-common-button>
 </div>

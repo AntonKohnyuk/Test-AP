@@ -14,13 +14,15 @@ export class CitySearchService {
 
   autocompleteCity(query: string): Observable<CityData[]> {
     const params = new HttpParams()
-      .set('name_startsWith', query)
+      .set('name', query)
       .set('username', this.username)
       .set('featureClass', 'P')
       .set('maxRows', 5);
 
-    return this.http
-      .get<CitiesNamesResponse>(this.apiUrl, { params })
-      .pipe(map(response => response.geonames || []));
+    return query.length >= 2
+      ? this.http
+          .get<CitiesNamesResponse>(this.apiUrl, { params })
+          .pipe(map(response => response.geonames || []))
+      : new Observable<CityData[]>();
   }
 }
