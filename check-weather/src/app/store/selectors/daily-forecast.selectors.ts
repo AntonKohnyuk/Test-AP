@@ -26,4 +26,3 @@ export const selectDailyTheme = createSelector(
   selectDailyFeature,
   forecast => forecast.data?.data[0].weather.icon
 );
-

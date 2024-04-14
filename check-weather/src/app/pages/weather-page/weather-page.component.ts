@@ -21,7 +21,5 @@ import { CommonButtonComponent } from '../../shared/components/common-button/com
   styleUrl: './weather-page.component.scss',
 })
 export class WeatherPageComponent {
-  cityName: string = 'Minsk';
-
   constructor() {}
 }
