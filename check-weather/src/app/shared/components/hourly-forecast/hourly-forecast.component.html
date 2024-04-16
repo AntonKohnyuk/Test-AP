@@ -1,1 +1,17 @@
-<p>hourly-forecast works!</p>
+@if (isLoading$ | async) {
+} @else {
+  @if (error$ | async) {
+    <p>Something went wrong</p>
+  } @else {
+    <div class="forecast_cards">
+      @for (hour of (forecast$ | async)?.hour; track $index) {
+        <div class="forecast_cards__card">
+          <p>{{ hour.time_epoch * 1000 | date: 'H:mm' }}</p>
+          <p>{{ hour.temp_c }}&deg;C</p>
+        </div>
+      } @empty {
+        <p class="forecast_cards__no_data">No data found</p>
+      }
+    </div>
+  }
+}
