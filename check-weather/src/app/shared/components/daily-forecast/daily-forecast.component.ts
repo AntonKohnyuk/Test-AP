@@ -9,7 +9,6 @@ import {
   selectDailyIsLoading,
 } from '../../../store/selectors/daily-forecast.selectors';
 import { AsyncPipe, DatePipe } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
 import { CityService } from '../../services/city.service';
 
 @Component({
@@ -27,13 +26,12 @@ export class DailyForecastComponent implements OnInit, OnDestroy {
 
   constructor(
     private store: Store,
-    private route: ActivatedRoute,
     private cityService: CityService
   ) {}
 
   ngOnInit(): void {
     this.city$ = this.cityService.getCityInfo().subscribe(city => {
-      if (city.name) this.store.dispatch(getDailyForecast({ city: city.name }));
+      this.store.dispatch(getDailyForecast({ city: city }));
     });
 
     this.forecast$ = this.store.select(selectDailyData);
