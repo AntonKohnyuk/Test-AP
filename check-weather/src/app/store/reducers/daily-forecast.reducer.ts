@@ -23,6 +23,7 @@ export const dailyForecastReducer = createReducer(
     (state): DailyForecastState => ({
       ...state,
       isLoading: true,
+      error: null,
     })
   ),
   on(

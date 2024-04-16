@@ -10,5 +10,7 @@ export interface DailyForecastData {
 
 export interface DailyForecastInterface {
   city_name: string;
+  lat: string;
+  lon: string;
   data: DailyForecastData[];
 }

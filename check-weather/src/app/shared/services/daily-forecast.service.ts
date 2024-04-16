@@ -1,3 +1,4 @@
+import { City } from './../types/city-info.interfaces';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -14,8 +15,14 @@ export class DailyForecastService {
     private cityService: CityService
   ) {}
 
-  getForecast(city: string): Observable<DailyForecastInterface> {
-    const fullUrl = `${environment.API_URL_DAILY_FORECAST}?city=${city}&key=${environment.API_KEY_DAILY_FORECAST}`;
+  getForecast(city: City): Observable<DailyForecastInterface> {
+    let fullUrl = `${environment.API_URL_DAILY_FORECAST}?`;
+
+    if (city.lat || city.lng)
+      fullUrl = `${fullUrl}lat=${(+city.lat).toFixed(3)}&lon=${(+city.lng).toFixed(3)}`;
+    else fullUrl = `${fullUrl}city=${city.name}`;
+
+    fullUrl = `${fullUrl}&key=${environment.API_KEY_DAILY_FORECAST}`;
     return this.http.get<DailyForecastInterface>(fullUrl);
   }
 }
