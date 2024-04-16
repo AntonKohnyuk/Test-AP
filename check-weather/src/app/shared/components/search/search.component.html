@@ -1,0 +1,21 @@
+<div class="search">
+  <form class="serach__form">
+    <input
+      type="text"
+      placeholder="City search"
+      [formControl]="search"
+      [matAutocomplete]="auto"
+      class="search__input" />
+    <mat-autocomplete
+      autoActiveFirstOption
+      #auto="matAutocomplete"
+      (optionSelected)="onOptionSelected($event)">
+      @for (option of cities$ | async; track option) {
+        <mat-option [value]="option"
+          >{{ option.name }}, {{ option.countryName }}
+        </mat-option>
+      }
+    </mat-autocomplete>
+  </form>
+  <app-common-button text="Search" (click)="searchCity()"></app-common-button>
+</div>

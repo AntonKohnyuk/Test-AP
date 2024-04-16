@@ -1,0 +1,27 @@
+.search {
+  min-width: 100%;
+  display: flex;
+  &__input {
+    border: 0;
+    border-radius: 5px;
+    height: 38px;
+    width: clamp(120px, 31.63vw, 257px);
+
+    margin-right: 28px;
+    padding: 3px 14px;
+    outline: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__input {
+      margin-right: 0;
+      margin-bottom: 17px;
+    }
+  }
+}
