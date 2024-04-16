@@ -5,6 +5,7 @@ import { DailyForecastComponent } from '../../shared/components/daily-forecast/d
 import { SearchComponent } from '../../shared/components/search/search.component';
 import { TitleComponent } from '../../shared/components/title/title.component';
 import { CommonButtonComponent } from '../../shared/components/common-button/common-button.component';
+import { HourlyForecastComponent } from '../../shared/components/hourly-forecast/hourly-forecast.component';
 
 @Component({
   selector: 'app-weather-page',
@@ -16,6 +17,7 @@ import { CommonButtonComponent } from '../../shared/components/common-button/com
     SearchComponent,
     TitleComponent,
     CommonButtonComponent,
+    HourlyForecastComponent,
   ],
   templateUrl: './weather-page.component.html',
   styleUrl: './weather-page.component.scss',

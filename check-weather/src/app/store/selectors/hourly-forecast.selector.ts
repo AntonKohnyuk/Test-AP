@@ -9,7 +9,7 @@ export const selectHourlyFeature =
 
 export const selectHourlyData = createSelector(
   selectHourlyFeature,
-  forecast => forecast.data?.forecast.forecastday
+  forecast => forecast.data?.forecast.forecastday[0]
 );
 
 export const selectHourlyIsLoading = createSelector(
