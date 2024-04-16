@@ -32,7 +32,6 @@ export const dailyForecastReducer = createReducer(
       ...state,
       data: forecast,
       isLoading: false,
-      error: null,
     })
   ),
   on(

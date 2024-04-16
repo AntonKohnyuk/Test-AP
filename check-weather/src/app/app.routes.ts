@@ -13,5 +13,5 @@ export const routes: Routes = [
       },
     ],
   },
-  { path: '**', redirectTo: '/forecast' },
+  { path: '**', redirectTo: 'forecast' },
 ];
