@@ -1,4 +1,6 @@
 .search {
+  min-width: 100%;
+  display: flex;
   &__input {
     border: 0;
     border-radius: 5px;
