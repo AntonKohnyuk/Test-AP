@@ -11,13 +11,28 @@ import {
 import { CityService } from '../../services/city.service';
 import { ForecastDayData } from '../../types/hourly-forecast.interfaces';
 import { AsyncPipe, DatePipe } from '@angular/common';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-hourly-forecast',
   standalone: true,
-  imports: [AsyncPipe, DatePipe],
+  imports: [AsyncPipe, DatePipe, MatProgressBarModule],
   templateUrl: './hourly-forecast.component.html',
   styleUrl: './hourly-forecast.component.scss',
+
+  animations: [
+    trigger('enterTrigger', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('1000ms', style({ opacity: 1 })),
+      ]),
+      transition(':leave', [
+        style({ opacity: 1 }),
+        animate('500ms', style({ opacity: 0 })),
+      ]),
+    ]),
+  ],
 })
 export class HourlyForecastComponent implements OnInit, OnDestroy {
   private city$!: Subscription;

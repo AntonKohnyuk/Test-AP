@@ -1,9 +1,10 @@
 @if (isLoading$ | async) {
+  <mat-progress-bar mode="buffer"></mat-progress-bar>
 } @else {
   @if (error$ | async) {
     <p>Something went wrong</p>
   } @else {
-    <div class="forecast_cards">
+    <div class="forecast_cards" @enterTrigger>
       @for (day of (forecast$ | async)?.data; track $index) {
         <div class="forecast_cards__card">
           <p>{{ $index ? (day.ts * 1000 | date: 'cccc') : 'Today' }}</p>
