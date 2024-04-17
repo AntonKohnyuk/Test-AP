@@ -5,7 +5,7 @@
     <p>Something went wrong</p>
   } @else {
     <div class="forecast_cards">
-      @for (hour of (forecast$ | async)?.hour; track $index) {
+      @for (hour of (forecast$ | async)?.hour! | filterByTime; track $index) {
         <div class="forecast_cards__card" @enterTrigger>
           <p>{{ hour.time_epoch * 1000 | date: 'H:mm' }}</p>
           <img
