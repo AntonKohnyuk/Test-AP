@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { SyncIconsService } from './../../services/sync-icons.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription, Observable } from 'rxjs';
 import { getHourlyForecast } from '../../../store/actions/hourly-weather.actions';
@@ -18,15 +19,18 @@ import { AsyncPipe, DatePipe } from '@angular/common';
   templateUrl: './hourly-forecast.component.html',
   styleUrl: './hourly-forecast.component.scss',
 })
-export class HourlyForecastComponent implements OnInit {
-  city$!: Subscription;
-  forecast$!: Observable<ForecastDayData | undefined>;
-  isLoading$!: Observable<boolean>;
-  error$!: Observable<string | null>;
+export class HourlyForecastComponent implements OnInit, OnDestroy {
+  private city$!: Subscription;
+  protected forecast$!: Observable<ForecastDayData | undefined>;
+  protected isLoading$!: Observable<boolean>;
+  protected error$!: Observable<string | null>;
+
+  protected basicPathToIcons = '../../../../assets/images/icons/forecast/';
 
   constructor(
     private store: Store,
-    private cityService: CityService
+    private cityService: CityService,
+    protected syncIconsService: SyncIconsService
   ) {}
 
   ngOnInit(): void {
@@ -37,5 +41,9 @@ export class HourlyForecastComponent implements OnInit {
     this.forecast$ = this.store.select(selectHourlyData);
     this.isLoading$ = this.store.select(selectHourlyIsLoading);
     this.error$ = this.store.select(selectHourlyError);
+  }
+
+  ngOnDestroy(): void {
+    this.city$.unsubscribe();
   }
 }

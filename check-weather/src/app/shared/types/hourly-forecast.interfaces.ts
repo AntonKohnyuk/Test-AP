@@ -2,6 +2,7 @@ export interface HourDataInterface {
   time_epoch: number;
   time: string;
   temp_c: number;
+  is_day: number;
   condition: {
     text: string;
     code: number;

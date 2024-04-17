@@ -7,6 +7,12 @@
       @for (hour of (forecast$ | async)?.hour; track $index) {
         <div class="forecast_cards__card">
           <p>{{ hour.time_epoch * 1000 | date: 'H:mm' }}</p>
+          <img
+            [src]="
+              basicPathToIcons +
+              syncIconsService.getIconPath(hour.condition.code, hour.is_day)
+            "
+            alt="icon" />
           <p>{{ hour.temp_c }}&deg;C</p>
         </div>
       } @empty {

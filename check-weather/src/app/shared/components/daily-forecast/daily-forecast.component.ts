@@ -19,10 +19,12 @@ import { CityService } from '../../services/city.service';
   styleUrl: './daily-forecast.component.scss',
 })
 export class DailyForecastComponent implements OnInit, OnDestroy {
-  city$!: Subscription;
-  forecast$!: Observable<DailyForecastInterface | null>;
-  isLoading$!: Observable<boolean>;
-  error$!: Observable<string | null>;
+  private city$!: Subscription;
+  protected forecast$!: Observable<DailyForecastInterface | null>;
+  protected isLoading$!: Observable<boolean>;
+  protected error$!: Observable<string | null>;
+
+  protected basicPathToIcons = '../../../../assets/images/icons/forecast/';
 
   constructor(
     private store: Store,
