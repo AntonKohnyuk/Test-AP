@@ -10,6 +10,8 @@
   justify-content: center;
   padding: 10px 20px;
 
+  transition: background-image 2s;
+
   .container {
     background-color: rgba(217, 217, 217, 0.2);
     backdrop-filter: blur(10px);

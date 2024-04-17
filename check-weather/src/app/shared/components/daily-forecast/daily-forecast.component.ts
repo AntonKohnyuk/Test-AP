@@ -9,20 +9,37 @@ import {
   selectDailyIsLoading,
 } from '../../../store/selectors/daily-forecast.selectors';
 import { AsyncPipe, DatePipe } from '@angular/common';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CityService } from '../../services/city.service';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-daily-forecast',
   standalone: true,
-  imports: [AsyncPipe, DatePipe],
+  imports: [AsyncPipe, DatePipe, MatProgressBarModule],
   templateUrl: './daily-forecast.component.html',
   styleUrl: './daily-forecast.component.scss',
+
+  animations: [
+    trigger('enterTrigger', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('1000ms', style({ opacity: 1 })),
+      ]),
+      transition(':leave', [
+        style({ opacity: 1 }),
+        animate('500ms', style({ opacity: 0 })),
+      ]),
+    ]),
+  ],
 })
 export class DailyForecastComponent implements OnInit, OnDestroy {
-  city$!: Subscription;
-  forecast$!: Observable<DailyForecastInterface | null>;
-  isLoading$!: Observable<boolean>;
-  error$!: Observable<string | null>;
+  private city$!: Subscription;
+  protected forecast$!: Observable<DailyForecastInterface | null>;
+  protected isLoading$!: Observable<boolean>;
+  protected error$!: Observable<string | null>;
+
+  protected basicPathToIcons = '../../../../assets/images/icons/forecast/';
 
   constructor(
     private store: Store,

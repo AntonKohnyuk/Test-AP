@@ -1,11 +1,14 @@
+export interface WeatherInfo {
+  code: number;
+  icon: string;
+  description: string;
+}
+
 export interface DailyForecastData {
   ts: number;
   valid_date: string;
   temp: number;
-  weather: {
-    icon: string;
-    description: string;
-  };
+  weather: WeatherInfo;
 }
 
 export interface DailyForecastInterface {
