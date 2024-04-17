@@ -8,12 +8,19 @@
     <app-google-calendar></app-google-calendar>
   </div>
   <div class="additional__select">
-    <app-common-button text="Daily"></app-common-button>
-    <app-common-button text="Hourly"></app-common-button>
+    <app-common-button
+      text="Daily"
+      (click)="changeForecastToDaily()"></app-common-button>
+    <app-common-button
+      text="Hourly"
+      (click)="changeForecastToHourly()"></app-common-button>
   </div>
 </section>
 
 <section class="forecast">
-  <app-daily-forecast></app-daily-forecast>
-  <!-- <app-hourly-forecast></app-hourly-forecast> -->
+  @if (forecastMode === modes.DAILY) {
+    <app-daily-forecast></app-daily-forecast>
+  } @else if (forecastMode === modes.HOURLY) {
+    <app-hourly-forecast></app-hourly-forecast>
+  }
 </section>

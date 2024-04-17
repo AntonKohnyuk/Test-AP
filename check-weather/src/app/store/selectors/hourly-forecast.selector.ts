@@ -7,7 +7,7 @@ import { createSelector, createFeatureSelector } from '@ngrx/store';
 export const selectHourlyFeature =
   createFeatureSelector<HourlyForecastState>(hourlyNode);
 
-export const selectHourlyData = createSelector(
+export const selectHourlyDataOfDay = createSelector(
   selectHourlyFeature,
   forecast => forecast.data?.forecast.forecastday[0]
 );
@@ -20,4 +20,9 @@ export const selectHourlyIsLoading = createSelector(
 export const selectHourlyError = createSelector(
   selectHourlyFeature,
   forecast => forecast.error
+);
+
+export const selectHourlyData = createSelector(
+  selectHourlyFeature,
+  forecast => forecast.data
 );
