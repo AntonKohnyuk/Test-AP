@@ -4,9 +4,9 @@ import { Store } from '@ngrx/store';
 import { Subscription, Observable } from 'rxjs';
 import { getHourlyForecast } from '../../../store/actions/hourly-weather.actions';
 import {
-  selectHourlyData,
   selectHourlyIsLoading,
   selectHourlyError,
+  selectHourlyDataOfDay,
 } from '../../../store/selectors/hourly-forecast.selector';
 import { CityService } from '../../services/city.service';
 import { ForecastDayData } from '../../types/hourly-forecast.interfaces';
@@ -53,7 +53,7 @@ export class HourlyForecastComponent implements OnInit, OnDestroy {
       this.store.dispatch(getHourlyForecast({ city }));
     });
 
-    this.forecast$ = this.store.select(selectHourlyData);
+    this.forecast$ = this.store.select(selectHourlyDataOfDay);
     this.isLoading$ = this.store.select(selectHourlyIsLoading);
     this.error$ = this.store.select(selectHourlyError);
   }

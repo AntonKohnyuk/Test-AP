@@ -18,6 +18,8 @@ export interface ForecastDayData {
 export interface HourlyForecastInterface {
   location: {
     name: string;
+    lat: number;
+    lon: number;
   };
   current: {
     last_updated_epoch: number;
