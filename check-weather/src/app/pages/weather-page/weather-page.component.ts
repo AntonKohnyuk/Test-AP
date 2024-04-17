@@ -6,6 +6,7 @@ import { SearchComponent } from '../../shared/components/search/search.component
 import { TitleComponent } from '../../shared/components/title/title.component';
 import { CommonButtonComponent } from '../../shared/components/common-button/common-button.component';
 import { HourlyForecastComponent } from '../../shared/components/hourly-forecast/hourly-forecast.component';
+import { ForecastModeEnum } from '../../shared/enums/forecast-mode.enum';
 
 @Component({
   selector: 'app-weather-page',
@@ -23,5 +24,16 @@ import { HourlyForecastComponent } from '../../shared/components/hourly-forecast
   styleUrl: './weather-page.component.scss',
 })
 export class WeatherPageComponent {
+  forecastMode: string = ForecastModeEnum.DAILY;
+  modes = ForecastModeEnum;
+
   constructor() {}
+
+  changeForecastToHourly() {
+    this.forecastMode = ForecastModeEnum.HOURLY;
+  }
+
+  changeForecastToDaily() {
+    this.forecastMode = ForecastModeEnum.DAILY;
+  }
 }

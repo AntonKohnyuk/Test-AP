@@ -31,7 +31,6 @@ export class DailyForecastComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.city$ = this.cityService.getCityInfo().subscribe(city => {
-      console.log(city);
       this.store.dispatch(getDailyForecast({ city: city }));
     });
 
