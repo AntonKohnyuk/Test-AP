@@ -1,4 +1,5 @@
 <div class="title">
-  <span>12.20 PM</span><br />
-  <span>Monday, 1 April 2024</span>
+  <span>{{ currentTime$ | async | date: 'shortTime' }}</span
+  ><br />
+  <span>{{ currentTime$ | async | date: 'EEEE, d MMMM y' }}</span>
 </div>
