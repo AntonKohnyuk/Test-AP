@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 import { GoogleCalendarComponent } from '../../shared/components/google-calendar/google-calendar.component';
 import { DailyForecastComponent } from '../../shared/components/daily-forecast/daily-forecast.component';
 import { SearchComponent } from '../../shared/components/search/search.component';
