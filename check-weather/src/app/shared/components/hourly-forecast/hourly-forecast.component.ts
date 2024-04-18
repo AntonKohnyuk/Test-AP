@@ -13,11 +13,13 @@ import { ForecastDayData } from '../../types/hourly-forecast.interfaces';
 import { AsyncPipe, DatePipe } from '@angular/common';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { FilterByTimePipe } from '../../pipes/filter-by-time.pipe';
+
 
 @Component({
   selector: 'app-hourly-forecast',
   standalone: true,
-  imports: [AsyncPipe, DatePipe, MatProgressBarModule],
+  imports: [AsyncPipe, DatePipe, MatProgressBarModule, FilterByTimePipe],
   templateUrl: './hourly-forecast.component.html',
   styleUrl: './hourly-forecast.component.scss',
 

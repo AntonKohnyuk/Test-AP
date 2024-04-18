@@ -6,6 +6,7 @@ export const routes: Routes = [
   {
     path: 'forecast',
     component: BackgroundLayoutComponent,
+    title: 'Forecast',
     children: [
       {
         path: '',
