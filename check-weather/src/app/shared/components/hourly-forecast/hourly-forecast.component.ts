@@ -15,6 +15,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { FilterByTimePipe } from '../../pipes/filter-by-time.pipe';
 
+
 @Component({
   selector: 'app-hourly-forecast',
   standalone: true,
