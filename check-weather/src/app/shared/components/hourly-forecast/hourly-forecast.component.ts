@@ -28,10 +28,6 @@ import { FilterByTimePipe } from '../../pipes/filter-by-time.pipe';
         style({ opacity: 0 }),
         animate('1000ms', style({ opacity: 1 })),
       ]),
-      transition(':leave', [
-        style({ opacity: 1 }),
-        animate('500ms', style({ opacity: 0 })),
-      ]),
     ]),
   ],
 })
