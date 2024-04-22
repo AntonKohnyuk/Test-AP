@@ -7,7 +7,7 @@ import { Observable, map } from 'rxjs';
   providedIn: 'root',
 })
 export class CitySearchService {
-  private apiUrl = 'http://api.geonames.org/searchJSON';
+  private apiUrl = 'https://secure.geonames.org/searchJSON';
   private username = 'antontestapp';
 
   constructor(private http: HttpClient) {}
