@@ -1,5 +1,5 @@
 import { ApplicationConfig, isDevMode } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withHashLocation } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideState, provideStore } from '@ngrx/store';
@@ -20,7 +20,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes),
+    provideRouter(routes, withHashLocation()),
     provideStore(),
     provideState({ name: dailyNode, reducer: dailyForecastReducer }),
     provideState({ name: hourlyNode, reducer: hourlyForecastReducer }),
