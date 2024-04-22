@@ -37,7 +37,7 @@ export class HourlyForecastComponent implements OnInit, OnDestroy {
   protected isLoading$!: Observable<boolean>;
   protected error$!: Observable<string | null>;
 
-  protected basicPathToIcons = '../../../../assets/images/icons/forecast/';
+  protected basicPathToIcons = '/assets/images/icons/forecast/';
 
   constructor(
     private store: Store,

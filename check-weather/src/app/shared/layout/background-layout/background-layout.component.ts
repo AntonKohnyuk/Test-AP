@@ -17,7 +17,7 @@ import { WeatherInfo } from '../../types/daily-forecast.interfaces';
 export class BackgroundLayoutComponent implements OnInit {
   theme$!: Observable<WeatherInfo | undefined>;
 
-  path: string = '../../../../assets/images/backgrounds/';
+  path: string = '/assets/images/backgrounds/';
 
   constructor(private store: Store) {}
 

@@ -7616,7 +7616,7 @@ var Sd = (() => {
     constructor(i, n) {
       (this.store = i),
         (this.cityService = n),
-        (this.basicPathToIcons = "../../../../assets/images/icons/forecast/");
+        (this.basicPathToIcons = "/assets/images/icons/forecast/");
     }
     ngOnInit() {
       (this.city$ = this.cityService.getCityInfo().subscribe((i) => {
@@ -12093,7 +12093,7 @@ var Mu = (() => {
       (this.store = i),
         (this.cityService = n),
         (this.syncIconsService = o),
-        (this.basicPathToIcons = "../../../../assets/images/icons/forecast/");
+        (this.basicPathToIcons = "/assets/images/icons/forecast/");
     }
     ngOnInit() {
       (this.city$ = this.cityService.getCityInfo().subscribe((i) => {
@@ -12229,8 +12229,7 @@ var Vv = (t) => ({ "background-image": t }),
   ku = (() => {
     let e = class e {
       constructor(i) {
-        (this.store = i),
-          (this.path = "../../../../assets/images/backgrounds/");
+        (this.store = i), (this.path = "/assets/images/backgrounds/");
       }
       ngOnInit() {
         this.theme$ = this.store.select(ed);
